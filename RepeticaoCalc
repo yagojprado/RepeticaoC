@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int soma(int a, int b) {
+  int s = a + b;
+  return s;
+}
+int sub(int a, int b) {
+  int s = a - b;
+  return s;
+}
+int mut(int a, int b){
+  int s=a*b;
+  return s;
+}
+int div(int a, int b){
+  if(a !=0){
+    int s=a*b;
+    return s;
+  }
+  else{
+    printf("O número escolhido não pode ser dividido!");
+  }
+}
+
+int main() {
+
+  int n1, n2, res, op;
+  int fim = 0;
+  while (fim == 0) {
+
+    printf("Digite um número\n");
+    scanf("%d", &n1);
+    printf("Digite um número\n");
+    scanf("%d", &n2);
+
+    printf("\nEscolha a operação\n 1-Somar\n 2-Subritair\n3-multiplicar\n4-Dividir\n");
+    scanf("%d", &op);
+    if (op == 1) {
+      res = soma(n1, n2);
+    }
+    if (op == 2) {
+      res = sub(n1, n2);
+    } 
+    if (op == 3){
+      res = mut(n1,n2);
+    }
+    if(op == 3){
+      res = div(n1,n2);
+    }
+    else {
+      printf("\n A opcao deseja foi invalido!");
+    }
+    printf("O resultado da soma foi:%d", res);
+    printf("\n0 - Continuar\n1- parar\n");
+    scanf("%d", &fim);
+  }
+  return 0;
+}
